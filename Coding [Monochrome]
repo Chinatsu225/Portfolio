@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプル会社</title>
+
+    <!-- リセットCSSを書いていく。「style」を忘れずに -->
+
+<style>
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* ここから自分で書いてます */
+.container {
+    /* 画面の幅は1100pxだが、画面を縮めた時に同じ大きさ（100％）を保つように。文章が折り返すようにする */
+    width: 100%;
+    max-width: 1100px;
+    /* これで画面の真ん中にセットしていく */
+    margin: 0 auto;
+    /* 「footer」との高さを出すため */
+    overflow: hidden;
+    line-height: 2em ;
+   
+}
+.main {
+    width: 72%;
+    float: right;
+    line-height: 2em;
+    
+}
+.main a {
+    color: #333;
+}
+.main p {
+    padding: 0 15px;
+}
+
+
+.main h2 {
+    height: 38px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 38px;
+    margin: 15px 0;
+    /* 「background」は全て１つの行に固めて書く */
+    /* 「left」のあとに「center」を記述すると、左からどのくらいの距離かを微調整できる*/
+    background: #000 url(img/mark1.png) no-repeat left 5px center;
+    padding-left: 30px;
+}
+
+
+.main h3 {
+    height: 38px;
+    font-size: 16px;
+    line-height: 38px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    /* 要素の色にグラデーション　上から下へ２色指定 */
+    background: linear-gradient(#fff,#ebebeb);
+    font-size:15px;
+    padding: 0 15px;
+}
+
+.main h4 {
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+#sidebar {
+    /* あえて「float」を使う */
+    width: 24%;
+    float: left;
+    background-color: #fff;
+}
+#sidebar h2 {
+    padding-left: 10px;
+    border-left: 3px solid black;
+    margin-bottom: 18px;
+    line-height: 1em;
+}
+
+#sidebar ul {
+    list-style: none;
+   
+    
+}
+#sidebar ul li {
+    background-color: white;
+    
+    line-height: 32px;
+    height: 32px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    
+}
+
+
+/* サイドバーの一番下のボーダーのみ消す */
+#sidebar ul li:last-child {
+    border: none;
+}
+/* リンク表示を消す */
+#sidebar ul li a {
+    /* ブロック要素にして全体に「hover」できるように。paddingで「li」の左の隙間を埋める */
+    display: block;
+    color: #333;
+    padding-left:12px;
+    text-decoration: none;
+    /* 時間差で「hover」できるように */
+    transition: 0.5s;
+    
+}
+#sidebar ul li a:hover {
+    background-color: #000;
+    color: #fff;
+
+}
+
+
+.box {
+    margin: 15px 0;
+    padding-left: 15px;
+
+}
+.box p {
+    font-size: 13px;
+
+}
+.gray {
+    padding: 20px 15px;
+    background-color: #ccc;
+    margin: 20px 15px;
+    border: 1px solid #ccc;
+
+
+}
+.news {
+    overflow-y:scroll ;
+    height: 150px;
+    padding-left: 15px;
+    margin-bottom: 100px;
+}
+
+
+.news dt {
+    display: inline-block;
+    width: 13%;
+    min-width: 100px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    
+}
+
+.news dd {
+    display: inline-block;
+    width: 80%;
+    border-bottom: 1px solid #ccc;
+    padding-left :20px;
+    font-size: 15px;
+    line-height: 2em;
+}
+
+
+
+.new {
+    background-color: red;
+    color: #fff;
+    font-size: 10px;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+footer {
+   background-color: black;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 2em;
+    margin: 0 auto;
+}
+</style>
+
+
+</head>
+<body>
+    <!-- 今回は使わない🔽 -->
+    <!-- Sample Company
+会社概要
+Company
+サービス紹介
+Service
+採用情報
+Recruit
+お問い合わせ
+Contact -->
+
+
+<div class="container">
+
+    <div class="main">
+        <!-- 黒のラベルでひとまとまりになっているので、sectionというタグでひとくくりにしていく -->
+        <section>
+            <h2>テンプレートのご利用前に必ずお読み下さい</h2>
+            <h3>利用規約のご案内</h3>
+            <p>このテンプレートは、<a href="#">Template Party</a> にて無料配布している『ビジネス・企業向け無料ホームページテンプレート tp_biz35』です。
+                必ずダウンロード先のサイトの<a href="">利用規約</a>をご一読の上でご利用下さい。</p>
+
+            <h4>■HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</h4>
+            <p>わざと見えなく加工する事も禁止です。</p>
+
+            <h4>■下部の著作を外したい場合は</h4>
+            <p><a href="">Template-Party</a>の<a href="">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます</p>
+
+            <h3>テンプレートに梱包されているjsファイル(javascript)について</h3>
+            <p>これらのファイルは全て<a href="">有限会社クリタス様</a>提供のプログラムです。jsファイルは改変せずにご利用下さい。<br>
+            また、当サイトのテンプレート以外に使いたいなど、「プログラムのみ」を使う場合はこちらの規約をお守り下さい。</p>
+
+            <h3>当テンプレートの詳しい使い方は</h3>
+            <p><a href="">こちらをご覧下さい。</a></p>
+        </section>
+
+        <section>
+            <h2>企業向けCMSプログラム販売中</h2>
+            <p>トップページや会社概要ページや業務案内ページなどの各ページレイアウト設定済みのプログラムを販売中です。詳しくはこちらをご覧下さい。</p>
+        </section>
+
+        <section>
+            <h2>更新情報・お知らせ</h2>
+            <div class="news">
+                <!-- 「dl」→「dt」→「dd」の順番で書いていく -->
+                <dl>
+                <!-- 改行の分が反映されてしまい、次の行に文章がいってしまう。コメントアウトで改行をなかったことにする -->
+                    <dt><time>2017/02/27</time></dt><!--
+                --><dd>html,cssを中心に更新。旧ファイルが必要な場合はお問い合わせ下さい。<span class="new">NEW</span></dd>
+                    <dt><time>2017/02/19</dt><!--
+                --><dd>biz35公開。</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                    <dt><time>20XX/00/00</time></dt><!--
+                --><dd>ホームページリニューアル</dd>
+                </dl>
+             </div> 
+        </section>
+    </div><!-- ここまでは「main」 -->
+
+
+    <div id="sidebar">
+        <div class="box gray">
+            <h2>SUB MENU</h2>
+            <ul>
+                <li><a href="">よく頂く質問</li></a>
+                <li><a href="">リンク集</li></a>
+                <li><a href="">主要メニュー</li></a>
+                <li><a href="">主要メニュー</li></a>
+                <li><a href="">主要メニュー</li></a>
+            </ul>
+        </div>
+
+        <div class="box gray">
+            <h2>この見出しはh2タグです</h2>
+            <p>このボックスは、class="box1"と指定すれば出ます。</p>
+        </div>
+        
+        <div class="box">
+            <h2>この見出しはh2タグです</h2>
+            <p>ここのスペースも使えます</p>
+        </div>
+    </div>  <!-- ここまでが「sidebar」 -->
+</div>   <!--ここまでが「container」 -->
+
+
+<footer>
+   <p><small>Copyright© Sample Company All Rights Reserved.</small></p>
+    <p>《Web Design:Template-Party》</p>
+</footer> 
+
+
+</body>
+</html>
